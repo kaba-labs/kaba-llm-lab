@@ -55,6 +55,10 @@ const Settings = dynamic(async () => (await import("./settings")).Settings, {
   loading: () => <Loading noLogo />,
 });
 
+const Policy = dynamic(async () => (await import("./settings")).Policy, {
+  loading: () => <Loading noLogo />,
+});
+
 const Chat = dynamic(async () => (await import("./chat")).Chat, {
   loading: () => <Loading noLogo />,
 });
@@ -154,6 +158,7 @@ function Screen() {
             <Route path={Path.Templates} element={<TemplatePage />} />
             <Route path={Path.Chat} element={<Chat />} />
             <Route path={Path.Settings} element={<Settings />} />
+            <Route path={Path.Policy} element={<Policy />} />
           </Routes>
         </div>
       </>

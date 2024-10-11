@@ -32,7 +32,11 @@ import { LOG_LEVELS, Path, SlotID } from "../constant";
 import { Prompt, SearchService, usePromptStore } from "../store/prompt";
 import { ErrorBoundary } from "./error";
 import { InputRange } from "./input-range";
-import { useNavigate } from "react-router-dom";
+import {
+  createSearchParams,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 import { nanoid } from "nanoid";
 import { LogLevel } from "@mlc-ai/web-llm";
 import { WebLLMContext } from "../context";
@@ -227,6 +231,61 @@ function DangerItems() {
       </ListItem>
     </List>
   );
+}
+
+export function Policy() {
+  const navigate = useNavigate();
+  const config = useAppConfig();
+  // const updateConfig = config.update;
+  const webllm = useContext(WebLLMContext);
+
+  // const promptStore = usePromptStore();
+  // const builtinCount = SearchService.count.builtin;
+  // const customCount = promptStore.getUserPrompts().length ?? 0;
+  // const [shouldShowPromptModal, setShowPromptModal] = useState(false);
+
+  // const chatStore = useChatStore();
+
+  let [searchParams, setSearchParams] = useSearchParams();
+
+  // @ts-ignore
+  config.update(async (c) => {
+    // @ts-ignore
+    // @ts-expect-error
+    const k = await kaba.browser.profile();
+    const models = k.policy.ai.models;
+    const modelConfig = k.policy.ai.modelConfig;
+
+    // console.log(k);
+
+    config.setModels(models);
+    config.updateModelConfig({
+      temperature: 0.6,
+      presence_penalty: 0,
+      frequency_penalty: 0,
+      max_tokens: 4000,
+      top_p: 0.9,
+      mlc_endpoint: k.policy.ai.modelConfig.mlc_endpoint,
+      model: k.policy.ai.models[0].name,
+    });
+
+    // config.selectModel(k.policy.ai.models[0]);
+  });
+
+  // var newUserInput: string = "";
+  // newUserInput = window.location.hash;
+  // newUserInput = newUserInput
+  // .replace("#/policy", "")
+  // .replace("?userInput=", "");
+
+  navigate({
+    pathname: Path.Chat,
+    search: createSearchParams({
+      userInput: "",
+    }).toString(),
+  });
+
+  return <div></div>;
 }
 
 export function Settings() {
