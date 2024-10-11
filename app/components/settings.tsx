@@ -260,16 +260,16 @@ export function Policy() {
 
     config.setModels(models);
     config.updateModelConfig({
-      temperature: 0.6,
+      temperature: 1,
       presence_penalty: 0,
       frequency_penalty: 0,
       max_tokens: 4000,
       top_p: 0.9,
       mlc_endpoint: k.policy.ai.modelConfig.mlc_endpoint,
-      model: k.policy.ai.models[0].name,
+      model: k.policy.ai.modelConfig.model,
     });
 
-    // config.selectModel(k.policy.ai.models[0]);
+    // config.selectModel(k.policy.ai.models[0]?.name);
   });
 
   // var newUserInput: string = "";
