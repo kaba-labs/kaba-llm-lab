@@ -5,7 +5,7 @@ NAME=kaba-ai
 build: 
 	@yarn export
 	@cp -R out/* ../kaba/app/userland/ai/
-	@cp -R sw.js ~/source/kaba-labs/kaba/app/userland/ai/sw.js
+	# @cp -R sw.js ~/source/kaba-labs/kaba/app/userland/ai/sw.js
 
 out:
 	@cp -R out/* ../kaba/app/userland/ai/
