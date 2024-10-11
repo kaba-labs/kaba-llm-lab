@@ -1,6 +1,6 @@
 {
-  "name": "WebLLM Chat",
-  "short_name": "WebLLMChat",
+  "name": "ai",
+  "short_name": "ai",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -14,8 +14,8 @@
     }
   ],
   "start_url": "/",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#141414",
+  "background_color": "#141414",
   "display": "standalone",
   "orientation": "portrait"
 }

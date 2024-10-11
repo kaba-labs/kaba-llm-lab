@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kaba-webllm-deployment
+  namespace: kabacorp
+  annotations:
+    # service.beta.kubernetes.io/do-loadbalancer-name: "kaba-server-loadbalancer"
+spec:
+  type: ClusterIP
+  selector:
+    app: kaba-webllm-deployment
+  ports:
+    - name: https
+      protocol: TCP
+      port: 443
+      targetPort: 3000
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 3000

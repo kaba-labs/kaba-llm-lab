@@ -15,6 +15,27 @@
     U+FE2E-FE2F;
 }
 
+@font-face {
+  font-family: "Space Mono";
+  src: url(/fonts/kaba-regular.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url(/fonts/kaba-font-bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url(/fonts/kaba-font.ttf)
+    format("truetype");
+  font-weight: 300 700;
+}
+
 /* cyrillic */
 @font-face {
   font-family: "Noto Sans";

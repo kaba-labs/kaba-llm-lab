@@ -218,35 +218,8 @@ export function SideBar(props: { className?: string }) {
               }}
             />
           </div>
-          <div className={styles["sidebar-action"]}>
-            <a href={WEBLLM_HOME_URL} target="_blank" rel="noopener noreferrer">
-              <IconButton icon={<InternetIcon />} shadow />
-            </a>
-          </div>
-          <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
-              <IconButton icon={<GithubIcon />} shadow />
-            </a>
-          </div>
-          <div className={styles["sidebar-action"]}>
-            <IconButton
-              icon={
-                <>
-                  {theme === Theme.Auto ? (
-                    <AutoIcon />
-                  ) : theme === Theme.Light ? (
-                    <LightIcon />
-                  ) : theme === Theme.Dark ? (
-                    <DarkIcon />
-                  ) : null}
-                </>
-              }
-              onClick={nextTheme}
-              shadow
-            />
-          </div>
         </div>
-        <div>
+        <div className={styles["sidebar-newchat-btn"]}>
           <IconButton
             icon={<AddIcon />}
             text={shouldNarrow ? undefined : Locale.Home.NewChat}
