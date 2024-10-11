@@ -3,7 +3,7 @@ import { SubmitKey } from "../store/config";
 // if you are adding a new translation, please use PartialLocaleType instead of LocaleType
 
 const en = {
-  Title: "WebLLM Chat",
+  Title: "Laba LLM Lab",
   Subtitle: "AI Models Running in Browser",
   WIP: "Coming Soon...",
   ChatItem: {
@@ -218,8 +218,8 @@ const en = {
     Model: "Model",
     ModelClientType: {
       Title: "Model Type",
-      WebLlm: "WebLLM Models",
-      MlcLlm: "MLC-LLM REST API (Advanced)",
+      WebLlm: "Local (secure)",
+      MlcLlm: "Remote (fast)",
     },
 
     MlcLlmApi: {
