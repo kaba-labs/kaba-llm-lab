@@ -1,13 +1,18 @@
 @mixin container {
-  background-color: var(--white);
   border: var(--border-in-light);
   border-radius: 20px;
-  box-shadow: var(--shadow);
   color: var(--black);
-  background-color: var(--white);
+  background-color: rgba(0, 0, 0, 0.7);
   min-width: 600px;
   min-height: 370px;
   max-width: 1200px;
+
+  // background: transparent;
+  background: rgb(0 0 0 / 49%);
+  box-shadow:
+    rgba(255, 255, 255, 0.15) 0px 1px 0px 0px,
+    rgba(0, 0, 0, 0.15) 0px 4px 4px 4px;
+  backdrop-filter: blur(6px);
 
   display: flex;
   overflow: hidden;
@@ -38,27 +43,32 @@
 }
 
 .sidebar {
+  background: transparent;
+  box-shadow:
+    rgba(255, 255, 255, 0.15) 0px 1px 0px 0px,
+    rgba(0, 0, 0, 0.15) 0px 4px 4px 4px;
+  backdrop-filter: blur(6px);
+
   top: 0;
   width: var(--sidebar-width);
   box-sizing: border-box;
   padding: 20px;
-  background-color: var(--second);
   display: flex;
   flex-direction: column;
-  box-shadow: inset -2px 0px 2px 0px rgb(0, 0, 0, 0.05);
   position: relative;
   transition: width ease 0.05s;
 
   .sidebar-header-bar {
     display: flex;
-    margin-bottom: 20px;
 
     .sidebar-bar-button {
       flex-grow: 1;
+    }
+  }
 
-      &:not(:last-child) {
-        margin-right: 10px;
-      }
+  .sidebar-header-bar, .sidebar-actions {
+    button {
+      margin-right: 10px;
     }
   }
 
@@ -154,9 +164,6 @@
   height: 48px;
 
   svg {
-    width: 100%;
-    height: 100%;
-
     opacity: 0.8;
   }
 }
@@ -221,12 +228,12 @@
   cursor: pointer;
 }
 
-.chat-item:hover>.chat-item-delete {
+.chat-item:hover > .chat-item-delete {
   opacity: 0.5;
   transform: translateX(-4px);
 }
 
-.chat-item:hover>.chat-item-delete:hover {
+.chat-item:hover > .chat-item-delete:hover {
   opacity: 1;
 }
 
@@ -266,12 +273,12 @@
 
   .sidebar-header-bar {
     flex-direction: column;
+  }
 
-    .sidebar-bar-button {
-      &:not(:last-child) {
-        margin-right: 0;
-        margin-bottom: 10px;
-      }
+  .sidebar-header-bar, .sidebar-actions, .sidebar-newchat-btn {
+    button {
+      margin-right: 0;
+      margin-bottom: 10px;
     }
   }
 
@@ -367,7 +374,6 @@
   }
 }
 
-
 .error-screen {
   display: flex;
   flex-direction: column;
@@ -378,8 +384,4 @@
 
   padding: 4rem;
   text-align: center;
-}
-
-.rtl-screen {
-  direction: rtl;
 }
