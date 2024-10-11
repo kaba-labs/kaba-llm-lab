@@ -21,6 +21,7 @@ const cspHeader = `
     upgrade-insecure-requests;
 `;
 
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack(config, { isServer }) {
