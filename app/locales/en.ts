@@ -3,7 +3,7 @@ import { SubmitKey } from "../store/config";
 // if you are adding a new translation, please use PartialLocaleType instead of LocaleType
 
 const en = {
-  Title: "Laba LLM Lab",
+  Title: "Kaba LLM Lab",
   Subtitle: "AI Models Running in Browser",
   WIP: "Coming Soon...",
   ChatItem: {
@@ -78,7 +78,7 @@ const en = {
     Copy: "Copy All",
     Download: "Download",
     MessageFromYou: "Message From You",
-    MessageFromWebLLM: "Message From WebLLM",
+    MessageFromWebLLM: "Message From Kaba",
     Share: "Share",
     Format: {
       Title: "Export Format",
@@ -379,10 +379,10 @@ const en = {
 
   ServiceWorker: {
     Error:
-      "The WebLLM worker has lost connection. Please close all tabs of WebLLM Chat and try opening WebLLM Chat again.",
+      "The worker has lost connection. Please close all tabs  and try opening again.",
   },
   MlcLLMConnect: {
-    Title: "Connect to MLC-LLM API Endpoint",
+    Title: "Connect to Kaba API Endpoint",
   },
 };
 
