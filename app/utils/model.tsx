@@ -3,7 +3,8 @@ import MetaIcon from "@/app/icons/meta.svg";
 import MicrosoftIcon from "@/app/icons/microsoft.svg";
 import MistralIcon from "@/app/icons/mistral.svg";
 import GoogleIcon from "@/app/icons/google.svg";
-import StablelmICon from "@/app/icons/stablelm.svg";
+import StablelmIcon from "@/app/icons/stablelm.svg";
+import DeepSeekIcon from "@/app/icons/deepseek.svg";
 import { ModelRecord } from "../client/api";
 import { ModelFamily } from "../constant";
 import { Shirt, WandSparkles } from "lucide-react";
@@ -71,20 +72,21 @@ export interface ModelDetails {
 
 export const modelDetailsList: ModelDetails[] = [
   { family: ModelFamily.LLAMA, name: "Llama", icon: MetaIcon },
-  { family: ModelFamily.PHI, name: "Phi", icon: MicrosoftIcon },
-  { family: ModelFamily.MISTRAL, name: "Mistral", icon: MistralIcon },
-  { family: ModelFamily.GEMMA, name: "Gemma", icon: GoogleIcon },
+  { family: ModelFamily.DEEPSEEK, name: "DeepSeek", icon: DeepSeekIcon },
   {
     family: ModelFamily.QWEN,
     name: "Qwen",
     icon: (...props) => <img src="./qwen.webp" alt="Qwen Logo" {...props} />,
   },
+  { family: ModelFamily.GEMMA, name: "Gemma", icon: GoogleIcon },
+  { family: ModelFamily.PHI, name: "Phi", icon: MicrosoftIcon },
+  { family: ModelFamily.MISTRAL, name: "Mistral", icon: MistralIcon },
   {
     family: ModelFamily.SMOL_LM,
     name: "SmolLM",
     icon: (...props) => <img src="./smollm.png" alt="SmolLM Logo" {...props} />,
   },
-  { family: ModelFamily.WIZARD_MATH, name: "Wizard Math", icon: WandSparkles },
-  { family: ModelFamily.STABLE_LM, name: "StableLM", icon: StablelmICon },
+  { family: ModelFamily.STABLE_LM, name: "StableLM", icon: StablelmIcon },
   { family: ModelFamily.REDPAJAMA, name: "RedPajama", icon: Shirt },
+  { family: ModelFamily.WIZARD_MATH, name: "Wizard Math", icon: WandSparkles },
 ];
