@@ -242,7 +242,7 @@ export function Policy() {
   // const promptStore = usePromptStore();
   // const builtinCount = SearchService.count.builtin;
   // const customCount = promptStore.getUserPrompts().length ?? 0;
-  // const [shouldShowPromptModal, setShowPromptModal] = useState(false);
+  const [shouldShowPromptModal, setShowPromptModal] = useState(true);
 
   // const chatStore = useChatStore();
 
