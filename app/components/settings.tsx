@@ -259,6 +259,7 @@ export function Policy() {
     // console.log(k);
 
     config.setModels(models);
+
     config.updateModelConfig({
       temperature: 1,
       presence_penalty: 0,
@@ -266,7 +267,7 @@ export function Policy() {
       max_tokens: 4000,
       top_p: 0.9,
       mlc_endpoint: k.policy.ai.modelConfig.mlc_endpoint,
-      model: k.policy.ai.modelConfig.model,
+      model: k.policy.ai.modelConfig.model || models[0],
     });
 
     // config.selectModel(k.policy.ai.models[0]?.name);
